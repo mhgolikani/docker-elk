@@ -1,0 +1,16 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - '/data/linkedin.json'
+
+output.elasticsearch:
+  hosts: ['http://elasticsearch:9200']
+  username: elastic
+  password: Network@dpk1400
+  index: linkedin
+#  pipeline: ""
+
+setup:
+  template.enabled: false
+  ilm.enabled: false
